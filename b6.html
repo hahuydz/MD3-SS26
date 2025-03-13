@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arr = ["2025-03-10", "2024-12-25", "2023-07-01"];
+      let arr1 = [];
+      let arr2 = "abc";
+
+      const changeDate = (arr) => {
+        return arr.map((item) => {
+          return item.split("-").reverse().join("/");
+        });
+      };
+
+      const result = (array) => {
+        if (array.length === 0) {
+          console.log("Mảng không có phần tử nào");
+        } else if (!Array.isArray(array)) {
+          console.log("Dữ liệu không hợp lệ");
+        } else {
+          let result = changeDate(array);
+          console.log("Result: ", result);
+        }
+      };
+
+      result(arr1);
+      result(arr2);
+      result(arr);
+    </script>
+  </body>
+</html>
