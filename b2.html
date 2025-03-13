@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let check = true;
+      let size;
+      let arr = [];
+
+      const checkString = (arr) => {
+        if (typeof arr !== "object") {
+          return false;
+        }
+        return arr.filter((item) => item.length > 5);
+      };
+
+      do {
+        size = +prompt("Nhập số lượng phần tử mảng: ");
+        check = Number.isInteger(size) && size >= 0 ? false : true;
+      } while (check);
+
+      if (size === 0) {
+        console.log("Mảng không có phần tử nào");
+      } else {
+        for (let i = 0; i < size; i++) {
+          arr[i] = prompt(`Nhập phần tử thứ ${i + 1}: `);
+        }
+
+        let newArr = checkString("arr");
+        newArr
+          ? console.log("Result: ", newArr)
+          : console.log("Dữ liệu không hợp lệ");
+      }
+    </script>
+  </body>
+</html>
