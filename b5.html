@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arr = [10, 9, 5, 11, 24, 5];
+      let arr1 = [];
+      let arr2 = "abc";
+
+      const result = (array) => {
+        if (array.length === 0) {
+          console.log("Mảng không có phần tử nào");
+        } else if (!Array.isArray(array)) {
+          console.log("Dữ liệu không hợp lệ");
+        } else {
+          let max = Math.max(...array);
+          let index = array.indexOf(max);
+          console.log("Max: ", max);
+          console.log("Index: ", index);
+        }
+      };
+
+      result(arr1);
+      result(arr2);
+      result(arr);
+    </script>
+  </body>
+</html>
