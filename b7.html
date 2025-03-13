@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arr = [];
+      let arr1 = [];
+      let arr2 = "abc";
+
+      for (let i = 0; i < 10; i++) {
+        arr[i] = +prompt(`Nhập phần tử thứ ${i + 1}`);
+      }
+
+      const squareAndFilter = (arr) => {
+        let newArr = arr.map((item) => item ** 2);
+
+        return newArr.filter((item) => item % 2 === 0);
+      };
+
+      const result = (array) => {
+        if (array.length === 0) {
+          console.log("Mảng không có phần tử nào");
+        } else if (!Array.isArray(array)) {
+          console.log("Dữ liệu không hợp lệ");
+        } else {
+          let result = squareAndFilter(array);
+          console.log("Result: ", result);
+        }
+      };
+
+      result(arr1);
+      result(arr2);
+      result(arr);
+    </script>
+  </body>
+</html>
